@@ -1,0 +1,22 @@
+namespace AnimalClassLib
+{
+    public class Animal
+    {
+        public string GetSound(string animal)
+        {
+            if (animal == "kutya")
+            {
+                return "vau";
+            }
+            else if (animal == "macska")
+            {
+                return "miau";
+            }
+            else if (animal == "tehén")
+            {
+                return "mú";
+            }
+            return "Ismeretlen állat";
+        }
+    }
+}

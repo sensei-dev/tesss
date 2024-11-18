@@ -1,0 +1,47 @@
+using NUnit.Framework;
+using AnimalClassLib;
+namespace UnitTest;
+
+[TestFixture]
+public class Tests
+{
+    private Animal _animal;
+    [SetUp]
+    public void Setup()
+    {
+        _animal = new Animal();
+    }
+
+    [Test]
+    public void IsVau()
+    {
+        string allat = "kutya";
+        string hang = "vau";
+
+        string classHang = _animal.GetSound(allat);
+
+        Assert.AreEqual(hang, classHang);
+    }
+
+    [Test]
+    public void IsMiau()
+    {
+        string allat = "macska";
+        string hang = "miau";
+
+        string classHang = _animal.GetSound(allat);
+
+        Assert.AreEqual(hang, classHang);
+    }
+
+    [Test]
+    public void IsUnknown()
+    {
+        string allat = "teve";
+        string expReturn = "Ismeretlen állat";
+
+        string actReturn = _animal.GetSound(allat);
+
+        Assert.AreEqual(expReturn, actReturn);
+    }
+}
